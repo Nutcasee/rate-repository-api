@@ -91,9 +91,21 @@ export default ({ logStream, context, schema, config } = {}) => {
 
   app.use(cors());
 
+  // const issue2options = {
+  //   "origin": "*",
+  //   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+  //   "preflightContinue": false,
+  //   "optionsSuccessStatus": 204
+  // };
+
+  const corsOptions = {
+    origin: 'https://localhost:19006',
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+
   const apiRouter = new Router();
 
-  apiRouter.use('/api', cors(), api.routes());
+  apiRouter.use('/api', cors(corsOptions), api.routes());
 
   app.use(apiRouter.routes());
 
