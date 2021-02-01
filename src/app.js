@@ -93,7 +93,7 @@ export default ({ logStream, context, schema, config } = {}) => {
 
   const apiRouter = new Router();
 
-  apiRouter.use('/api', api.routes());
+  apiRouter.use('/api', cors(), api.routes());
 
   app.use(apiRouter.routes());
 
