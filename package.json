@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node ./src/index.js",
+    "start": "npm run initdatabase && npm run migrate:latest && knex seed:run && node ./src/index.js",
     "lint": "eslint ./src",
     "test": "jest .",
     "migrate:make": "knex migrate:make",
@@ -60,6 +60,7 @@
     "lodash": "^4.17.15",
     "lru-cache": "^5.1.1",
     "objection": "^2.1.2",
+    "pg": "^8.5.1",
     "sqlite3": "^4.1.1",
     "through2": "^3.0.1",
     "touch": "^3.1.0",
