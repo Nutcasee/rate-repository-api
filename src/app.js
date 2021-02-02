@@ -90,7 +90,7 @@ export default ({ logStream, context, schema, config } = {}) => {
   });
 
   const issue2options = {
-    origin: '*',
+    origin: 'http://localhost:19006',
     // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     // preflightContinue: false,
     optionsSuccessStatus: 204,
