@@ -91,8 +91,8 @@ export default ({ logStream, context, schema, config } = {}) => {
 
   const issue2options = {
     origin: '*',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    preflightContinue: false,
+    // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    // preflightContinue: false,
     optionsSuccessStatus: 204,
   };
 
