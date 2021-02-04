@@ -89,12 +89,12 @@ export default ({ logStream, context, schema, config } = {}) => {
     await next();
   });
 
-  const issue2options = {
-    origin: 'http://localhost:19006',
-    // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    // preflightContinue: false,
-    optionsSuccessStatus: 204,
-  };
+  // const issue2options = {
+  //   origin: '*',
+  //   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  //   preflightContinue: false,
+  //   optionsSuccessStatus: 204,
+  // };
 
   // const corsOptions = {
   //   origin: 'https://localhost:19006',
@@ -102,7 +102,9 @@ export default ({ logStream, context, schema, config } = {}) => {
   // };
   // cors(issue2options),
 
-  app.use(cors(issue2options));
+  // app.use(cors(issue2options));
+
+  app.use(cors());
 
   const apiRouter = new Router();
 
